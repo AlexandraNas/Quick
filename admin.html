@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · QuickVolunteer</title>
+  <meta name="description" content="Check ID documents, members, reported concerns, profile changes and reviews.">
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Fraunces:opsz,wght,SOFT,WONK@9..144,700,0,1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/accessibility.js"></script>
+</head>
+<body>
+  <a class="skip-to-main" href="#main">Skip to main content</a>
+  <div class="a11y-bar" data-a11y-bar>
+    <div class="a11y-bar__inner">
+      <button class="a11y-bar__open" type="button" data-a11y-open aria-expanded="false" aria-controls="a11y-panel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7.2" r="1.3" fill="currentColor" stroke="none"/><path d="M7 10.2l5 1 5-1"/><path d="M12 11.2v3.6l-2.4 4.4"/><path d="M12 14.8l2.4 4.4"/></svg>
+        <span>Accessibility tools</span>
+      </button>
+    </div>
+    <div class="a11y-panel" id="a11y-panel" role="region" aria-labelledby="a11y-title" hidden>
+      <div class="a11y-panel__head">
+        <h2 id="a11y-title">Accessibility tools</h2>
+        <p>Change how QuickVolunteer looks and sounds. Your choices are saved in this browser.</p>
+      </div>
+      <div class="a11y-groups">
+        <div class="a11y-group" data-a11y-speech role="group" aria-labelledby="a11y-g1">
+          <h3 id="a11y-g1">Read aloud</h3>
+          <p class="a11y-hint">Reads the page, or only the text you select.</p>
+          <div class="a11y-buttons">
+            <button type="button" class="a11y-btn a11y-btn--main" data-a11y-read aria-pressed="false">Read aloud</button>
+            <button type="button" class="a11y-btn" data-a11y-stop disabled>Stop</button>
+          </div>
+          <div class="a11y-buttons" role="group" aria-label="Reading speed">
+            <button type="button" class="a11y-btn a11y-btn--small" data-a11y-rate="0.8">Slower</button>
+            <button type="button" class="a11y-btn a11y-btn--small" data-a11y-rate="1">Normal</button>
+            <button type="button" class="a11y-btn a11y-btn--small" data-a11y-rate="1.25">Faster</button>
+          </div>
+        </div>
+        <div class="a11y-group" role="group" aria-labelledby="a11y-g2">
+          <h3 id="a11y-g2">Text</h3>
+          <div class="a11y-size">
+            <button type="button" class="a11y-btn a11y-btn--square" data-a11y-text="down" aria-label="Smaller text">A&minus;</button>
+            <span class="a11y-size__value" data-a11y-text-value aria-hidden="true">100%</span>
+            <button type="button" class="a11y-btn a11y-btn--square" data-a11y-text="up" aria-label="Bigger text">A+</button>
+          </div>
+          <div class="a11y-buttons a11y-buttons--stack">
+            <button type="button" class="a11y-btn" data-a11y-switch="font" data-a11y-label="Easy to read font" aria-pressed="false">Easy to read font</button>
+            <button type="button" class="a11y-btn" data-a11y-switch="spacing" data-a11y-label="More space between lines" aria-pressed="false">More space between lines</button>
+          </div>
+        </div>
+        <div class="a11y-group" role="group" aria-labelledby="a11y-g3">
+          <h3 id="a11y-g3">Colours</h3>
+          <div class="a11y-buttons a11y-buttons--grid">
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--standard" data-a11y-colour="standard" aria-pressed="true">Standard</button>
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--contrast" data-a11y-colour="contrast" aria-pressed="false">High contrast</button>
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--dark" data-a11y-colour="dark" aria-pressed="false">Dark</button>
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--cream" data-a11y-colour="cream" aria-pressed="false">Soft cream</button>
+          </div>
+          <button type="button" class="a11y-btn" data-a11y-switch="links" data-a11y-label="Highlight links" aria-pressed="false">Highlight links</button>
+        </div>
+        <div class="a11y-group" role="group" aria-labelledby="a11y-g4">
+          <h3 id="a11y-g4">Focus</h3>
+          <div class="a11y-buttons a11y-buttons--stack">
+            <button type="button" class="a11y-btn" data-a11y-switch="ruler" data-a11y-label="Reading ruler" aria-pressed="false">Reading ruler</button>
+            <button type="button" class="a11y-btn" data-a11y-switch="mask" data-a11y-label="Screen mask" aria-pressed="false">Screen mask</button>
+            <button type="button" class="a11y-btn" data-a11y-switch="cursor" data-a11y-label="Big cursor" aria-pressed="false">Big cursor</button>
+          </div>
+        </div>
+      </div>
+      <div class="a11y-panel__foot">
+        <button type="button" class="a11y-btn" data-a11y-reset>Reset all</button>
+        <button type="button" class="a11y-btn a11y-btn--main" data-a11y-close>Close</button>
+      </div>
+      <p class="sr-only" role="status" data-a11y-status></p>
+    </div>
+  </div>
+<header class="site-header">
+    <a class="logo" href="index.html" aria-label="QuickVolunteer home"><img src="assets/icons/logo.svg" alt="" width="34" height="31"><span>QuickVolunteer</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="post-request.html">Ask for Help</a>
+      <a href="find-a-task.html">Offer Support</a>
+      <a href="impact.html">Impact</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn--outline btn--icon" href="find-a-task.html" aria-label="Search tasks"><img src="assets/icons/search.svg" alt="" width="22" height="22"></a>
+<div class="notif" data-notif>
+        <button class="btn btn--outline btn--icon notif__btn" type="button" aria-label="Notifications" aria-expanded="false" aria-haspopup="true"><img src="assets/icons/bell.svg" alt="" width="22" height="22"><span class="notif__dot" hidden></span></button>
+        <div class="notif__panel" role="dialog" aria-label="Notifications" hidden>
+          <p class="notif__title">Notifications</p>
+          <div class="notif__item" data-notif-profile hidden>
+            <p><strong>Finish setting up your profile</strong></p>
+            <p>Add your area and how you want to take part to see tasks near you and your best matches.</p>
+            <a class="btn btn--primary notif__cta" href="onboarding.html">Complete profile</a>
+          </div>
+          <p class="notif__empty" data-notif-empty>You are all caught up.</p>
+        </div>
+      </div>
+      <a class="account-chip" href="dashboard.html"><span class="avatar" data-initial>A</span><span data-first-name>My dashboard</span></a>
+      <a class="btn btn--outline" href="index.html" data-logout>Log out</a>
+    </div>
+    <div class="mobile-header-actions">
+      <a class="icon-btn mobile-search" href="find-a-task.html" aria-label="Search tasks"><img src="assets/icons/search.svg" alt="" width="22" height="22" style="width:22px;height:22px"></a>
+      <div class="notif notif--mobile" data-notif><button class="icon-btn notif__btn" type="button" aria-label="Notifications" aria-expanded="false" aria-haspopup="true"><img src="assets/icons/bell.svg" alt="" width="22" height="22" style="width:22px;height:22px"><span class="notif__dot" hidden></span></button>
+        <div class="notif__panel" role="dialog" aria-label="Notifications" hidden>
+          <p class="notif__title">Notifications</p>
+          <div class="notif__item" data-notif-profile hidden>
+            <p><strong>Finish setting up your profile</strong></p>
+            <p>Add your area and how you want to take part to see tasks near you and your best matches.</p>
+            <a class="btn btn--primary notif__cta" href="onboarding.html">Complete profile</a>
+          </div>
+          <p class="notif__empty" data-notif-empty>You are all caught up.</p>
+        </div></div>
+      <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><img src="assets/icons/menu-menu.svg" alt="" width="48" height="48"></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div>
+      <div class="mobile-menu__top">
+        <a class="logo" href="index.html" aria-label="QuickVolunteer home"><img src="assets/icons/logo.svg" alt="" width="34" height="31"><span>QuickVolunteer</span></a>
+        <button class="icon-btn menu-close" type="button" aria-label="Close menu"><img src="assets/icons/menu-close.svg" alt="" width="48" height="48"></button>
+      </div>
+      <form class="mobile-menu__search" action="find-a-task.html" role="search">
+        <label class="search-field"><img src="assets/icons/search-field.svg" alt="" width="20" height="20"><span class="sr-only">Search tasks</span><input type="search" name="q" placeholder="Search tasks"></label>
+      </form>
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a class="mobile-link" href="index.html"><span class="mobile-link__icon"><img src="assets/icons/menu-home.svg" alt="" width="18" height="18"></span><span>Home</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="post-request.html"><span class="mobile-link__icon"><img src="assets/icons/menu-hand.svg" alt="" width="18" height="18"></span><span>Ask for Help</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="find-a-task.html"><span class="mobile-link__icon"><img src="assets/icons/menu-heart.svg" alt="" width="18" height="18"></span><span>Offer Support</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="impact.html"><span class="mobile-link__icon"><img src="assets/icons/menu-chart.svg" alt="" width="18" height="18"></span><span>Impact</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="about.html"><span class="mobile-link__icon"><img src="assets/icons/menu-info.svg" alt="" width="18" height="18"></span><span>About</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+      </nav>
+    </div>
+    <div class="mobile-menu__account">
+      <hr>
+      <nav class="mobile-menu__mine" aria-label="My account"><a href="my-tasks.html">My tasks</a><a href="my-requests.html">My requests</a><a href="profile.html">My profile</a></nav>
+      <a class="btn btn--primary btn--block" href="dashboard.html">My dashboard</a>
+      <a class="btn btn--outline btn--block" href="index.html" data-logout>Log out</a>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1" class="page" data-admin>
+    <div class="page-head">
+      <div>
+        <h1 class="h-section">Admin dashboard</h1>
+        <p class="body">Check ID documents, look after members, review reported concerns and profile changes, and moderate reviews.</p>
+      </div>
+    </div>
+    <div class="admin-summary">
+      <p><strong data-count-accounts>3</strong> ID documents to check</p>
+      <p><strong data-count-concerns>2</strong> open concerns</p>
+      <p><strong data-count-changes>2</strong> profile changes to check</p>
+      <p><strong data-count-hidden>0</strong> hidden reviews</p>
+    </div>
+    <div class="dash-tabs" role="tablist" aria-label="Admin sections">
+      <button class="dash-tab" role="tab" type="button" data-tab="accounts" aria-selected="true">Verification</button>
+      <button class="dash-tab" role="tab" type="button" data-tab="members" aria-selected="false">Members</button>
+      <button class="dash-tab" role="tab" type="button" data-tab="concerns" aria-selected="false">Reported concerns</button>
+      <button class="dash-tab" role="tab" type="button" data-tab="changes" aria-selected="false">Profile changes</button>
+      <button class="dash-tab" role="tab" type="button" data-tab="reviews" aria-selected="false">Reviews</button>
+    </div>
+    <section class="dash-panel" data-panel="accounts" aria-label="Verification">
+      <p class="body muted">Members who asked to be verified. Open the ID document, check it matches the account, then approve or reject. The document is deleted as soon as you decide.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Member</th><th scope="col">Asked on</th><th scope="col">Taking part as</th><th scope="col">ID document</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+          <tbody>
+            <tr data-admin-row><td><strong>Priya S.</strong><br><span class="muted small">priya.s@example.com</span></td><td>17 Oct 2026</td><td>Give help</td><td><a class="link-green" href="#" data-view-document>View ID document</a></td>
+              <td><span class="status status--pending" data-status-label>Pending</span></td>
+              <td class="cell-actions"><button class="btn btn--primary btn--small" type="button" data-approve>Approve</button><button class="btn btn--outline btn--small" type="button" data-reject>Reject</button></td></tr>
+            <tr data-admin-row><td><strong>James L.</strong><br><span class="muted small">james.l@example.com</span></td><td>17 Oct 2026</td><td>Both</td><td><a class="link-green" href="#" data-view-document>View ID document</a></td>
+              <td><span class="status status--pending" data-status-label>Pending</span></td>
+              <td class="cell-actions"><button class="btn btn--primary btn--small" type="button" data-approve>Approve</button><button class="btn btn--outline btn--small" type="button" data-reject>Reject</button></td></tr>
+            <tr data-admin-row><td><strong>Rosa M.</strong><br><span class="muted small">rosa.m@example.com</span></td><td>18 Oct 2026</td><td>Ask for help</td><td><a class="link-green" href="#" data-view-document>View ID document</a></td>
+              <td><span class="status status--pending" data-status-label>Pending</span></td>
+              <td class="cell-actions"><button class="btn btn--primary btn--small" type="button" data-approve>Approve</button><button class="btn btn--outline btn--small" type="button" data-reject>Reject</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="dash-panel" data-panel="members" aria-label="Members" hidden>
+      <p class="body muted">Completed tasks are counted here only. Members do not see hours or totals on their own pages; the count will support volunteer levels in a future version.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">Member</th><th scope="col">Joined</th><th scope="col">Taking part as</th><th scope="col">Verified</th><th scope="col">Completed tasks</th><th scope="col">Account</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+          <tbody data-members-body>
+            <tr data-member-row><td><strong>Sophie W.</strong><br><span class="muted small">sophie.w@example.com</span></td><td class="nowrap">9 Oct 2026</td><td>Both</td><td><span class="verified"><img src="assets/icons/shield.svg" alt="" width="14" height="14">Verified</span></td>
+              <td class="nowrap"><strong>4</strong> helping · <strong>1</strong> asking</td>
+              <td><span class="status status--accepted" data-status-label>Active</span></td>
+              <td class="cell-actions"><button class="btn btn--outline btn--small" type="button" data-toggle-account>Suspend</button></td></tr>
+            <tr data-member-row><td><strong>Adam F.</strong><br><span class="muted small">adam.f@example.com</span></td><td class="nowrap">10 Oct 2026</td><td>Give help</td><td><span class="muted">No</span></td>
+              <td class="nowrap"><strong>1</strong> helping · <strong>0</strong> asking</td>
+              <td><span class="status status--accepted" data-status-label>Active</span></td>
+              <td class="cell-actions"><button class="btn btn--outline btn--small" type="button" data-toggle-account>Suspend</button></td></tr>
+            <tr data-member-row><td><strong>Nadia R.</strong><br><span class="muted small">nadia.r@example.com</span></td><td class="nowrap">11 Oct 2026</td><td>Ask for help</td><td><span class="verified"><img src="assets/icons/shield.svg" alt="" width="14" height="14">Verified</span></td>
+              <td class="nowrap"><strong>0</strong> helping · <strong>3</strong> asking</td>
+              <td><span class="status status--accepted" data-status-label>Active</span></td>
+              <td class="cell-actions"><button class="btn btn--outline btn--small" type="button" data-toggle-account>Suspend</button></td></tr>
+            <tr data-member-row><td><strong>Marcus T.</strong><br><span class="muted small">marcus.t@example.com</span></td><td class="nowrap">14 Oct 2026</td><td>Give help</td><td><span class="muted">No</span></td>
+              <td class="nowrap"><strong>0</strong> helping · <strong>0</strong> asking</td>
+              <td><span class="status status--accepted" data-status-label>Active</span></td>
+              <td class="cell-actions"><button class="btn btn--outline btn--small" type="button" data-toggle-account>Suspend</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="dash-panel" data-panel="changes" aria-label="Profile changes" hidden>
+      <p class="body muted">Members can edit their own details. Check that new details follow the community guidelines; suspend the account from the Members tab if they do not.</p>
+      <div class="concern-list" data-changes-list>
+          <article class="concern-card" data-change-card>
+            <div class="concern-card__head"><p class="muted small">22 Oct 2026</p><span class="status status--pending" data-status-label>To check</span></div>
+            <h3>Sophie W. changed their profile</h3>
+            <p class="muted">Changed: about me, neighbourhood</p>
+            <div class="inline-actions"><button class="btn btn--outline btn--small" type="button" data-mark-checked>Mark as checked</button></div>
+          </article>
+          <article class="concern-card" data-change-card>
+            <div class="concern-card__head"><p class="muted small">22 Oct 2026</p><span class="status status--pending" data-status-label>To check</span></div>
+            <h3>Adam F. changed their profile</h3>
+            <p class="muted">Changed: skills, preferred help mode</p>
+            <div class="inline-actions"><button class="btn btn--outline btn--small" type="button" data-mark-checked>Mark as checked</button></div>
+          </article>
+      </div>
+    </section>
+    <section class="dash-panel" data-panel="concerns" aria-label="Reported concerns" hidden>
+      <div class="concern-list">
+          <article class="concern-card" data-concern>
+            <div class="concern-card__head"><p class="eyebrow">QV-1041 · 18 Oct 2026</p><span class="status status--pending" data-status-label>New</span></div>
+            <h3>Task: Help assemble a flat pack wardrobe</h3>
+            <p class="muted">Reported by Adam F. · <strong>Asked for money or bank details</strong></p>
+            <p class="quote">“The requester asked me to buy replacement screws and send them the receipt so they could transfer the money back before the task.”</p>
+            <div class="inline-actions" data-concern-actions>
+              <button class="btn btn--outline btn--small" type="button" data-resolve>Mark as reviewed</button>
+              <button class="btn btn--primary btn--small" type="button" data-suspend>Suspend Joe P.</button>
+              <button class="link-button" type="button" data-dismiss>Dismiss</button>
+            </div>
+          </article>
+          <article class="concern-card" data-concern>
+            <div class="concern-card__head"><p class="eyebrow">QV-1042 · 19 Oct 2026</p><span class="status status--pending" data-status-label>New</span></div>
+            <h3>Member: Marcus T.</h3>
+            <p class="muted">Reported by Nadia R. · <strong>Did not turn up</strong></p>
+            <p class="quote">“The volunteer accepted my grocery collection, did not arrive at the agreed time and did not reply to messages.”</p>
+            <div class="inline-actions" data-concern-actions>
+              <button class="btn btn--outline btn--small" type="button" data-resolve>Mark as reviewed</button>
+              <button class="btn btn--primary btn--small" type="button" data-suspend>Suspend Marcus T.</button>
+              <button class="link-button" type="button" data-dismiss>Dismiss</button>
+            </div>
+          </article>
+      </div>
+    </section>
+    <section class="dash-panel" data-panel="reviews" aria-label="Reviews" hidden>
+      <p class="body muted">Hide a review that breaks the community guidelines. Hidden reviews no longer show on the member's profile and can be restored at any time.</p>
+      <div class="concern-list">
+          <article class="concern-card" data-review-card>
+            <div class="concern-card__head"><p class="muted small">20 Oct 2026</p><span class="status status--accepted" data-status-label>Visible</span></div>
+            <h3>Collect a click and collect grocery order</h3>
+            <p class="muted"><strong>Sophie W.</strong> reviewed <strong>Nadia R.</strong> · <span class="review-stars" aria-label="5 out of 5 stars">★★★★★</span></p>
+            <p class="quote">“Arrived on time and carried the bags all the way up. Very kind and easy to arrange.”</p>
+            <div class="inline-actions">
+              <button class="btn btn--outline btn--small" type="button" data-hide-review>Hide review</button>
+              <button class="btn btn--primary btn--small" type="button" data-restore-review hidden>Restore review</button>
+            </div>
+          </article>
+          <article class="concern-card" data-review-card>
+            <div class="concern-card__head"><p class="muted small">20 Oct 2026</p><span class="status status--accepted" data-status-label>Visible</span></div>
+            <h3>Weekly check-in call with an older resident</h3>
+            <p class="muted"><strong>Tom B.</strong> reviewed <strong>Adam F.</strong> · <span class="review-stars" aria-label="4 out of 5 stars">★★★★☆</span></p>
+            <p class="quote">“A friendly call and a good chat. We have already agreed the next one.”</p>
+            <div class="inline-actions">
+              <button class="btn btn--outline btn--small" type="button" data-hide-review>Hide review</button>
+              <button class="btn btn--primary btn--small" type="button" data-restore-review hidden>Restore review</button>
+            </div>
+          </article>
+          <article class="concern-card" data-review-card>
+            <div class="concern-card__head"><p class="muted small">21 Oct 2026</p><span class="status status--accepted" data-status-label>Visible</span></div>
+            <h3>Help assemble a flat pack wardrobe</h3>
+            <p class="muted"><strong>Joe P.</strong> reviewed <strong>Marcus T.</strong> · <span class="review-stars" aria-label="1 out of 5 stars">★☆☆☆☆</span></p>
+            <p class="quote">“Rude and useless, would never use this person again. Total waste of time.”</p>
+            <div class="inline-actions">
+              <button class="btn btn--outline btn--small" type="button" data-hide-review>Hide review</button>
+              <button class="btn btn--primary btn--small" type="button" data-restore-review hidden>Restore review</button>
+            </div>
+          </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="QuickVolunteer home"><img src="assets/icons/logo.svg" alt="" width="34" height="31"><span>QuickVolunteer</span></a>
+        <p>Making it easier to help your community, one small task at a time.</p>
+      </div>
+      <nav class="footer-links" aria-label="Get involved">
+        <h2>Get involved</h2>
+        <a href="signup.html?from=ask">Ask for Help</a>
+        <a href="find-a-task.html">Offer Support</a>
+        <a href="volunteer-guide.html">Volunteer Guide</a>
+        <a href="faqs.html">FAQs</a>
+      </nav>
+      <nav class="footer-links" aria-label="Quick links">
+        <h2>Quick links</h2>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-touch">
+        <h2>Stay in touch</h2>
+        <p>Get news about QuickVolunteer and new ways to help near you.</p>
+        <form class="subscribe" novalidate>
+          <label class="sr-only" for="subscribe-email">Your email address</label>
+          <input id="subscribe-email" type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="subscribe-note" hidden></p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>© 2026 QuickVolunteer. Small Tasks. Big Impact.</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="" width="18" height="18"></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQs · QuickVolunteer</title>
+  <meta name="description" content="Answers to common questions.">
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Fraunces:opsz,wght,SOFT,WONK@9..144,700,0,1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/accessibility.js"></script>
+</head>
+<body>
+  <a class="skip-to-main" href="#main">Skip to main content</a>
+  <div class="a11y-bar" data-a11y-bar>
+    <div class="a11y-bar__inner">
+      <button class="a11y-bar__open" type="button" data-a11y-open aria-expanded="false" aria-controls="a11y-panel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7.2" r="1.3" fill="currentColor" stroke="none"/><path d="M7 10.2l5 1 5-1"/><path d="M12 11.2v3.6l-2.4 4.4"/><path d="M12 14.8l2.4 4.4"/></svg>
+        <span>Accessibility tools</span>
+      </button>
+    </div>
+    <div class="a11y-panel" id="a11y-panel" role="region" aria-labelledby="a11y-title" hidden>
+      <div class="a11y-panel__head">
+        <h2 id="a11y-title">Accessibility tools</h2>
+        <p>Change how QuickVolunteer looks and sounds. Your choices are saved in this browser.</p>
+      </div>
+      <div class="a11y-groups">
+        <div class="a11y-group" data-a11y-speech role="group" aria-labelledby="a11y-g1">
+          <h3 id="a11y-g1">Read aloud</h3>
+          <p class="a11y-hint">Reads the page, or only the text you select.</p>
+          <div class="a11y-buttons">
+            <button type="button" class="a11y-btn a11y-btn--main" data-a11y-read aria-pressed="false">Read aloud</button>
+            <button type="button" class="a11y-btn" data-a11y-stop disabled>Stop</button>
+          </div>
+          <div class="a11y-buttons" role="group" aria-label="Reading speed">
+            <button type="button" class="a11y-btn a11y-btn--small" data-a11y-rate="0.8">Slower</button>
+            <button type="button" class="a11y-btn a11y-btn--small" data-a11y-rate="1">Normal</button>
+            <button type="button" class="a11y-btn a11y-btn--small" data-a11y-rate="1.25">Faster</button>
+          </div>
+        </div>
+        <div class="a11y-group" role="group" aria-labelledby="a11y-g2">
+          <h3 id="a11y-g2">Text</h3>
+          <div class="a11y-size">
+            <button type="button" class="a11y-btn a11y-btn--square" data-a11y-text="down" aria-label="Smaller text">A&minus;</button>
+            <span class="a11y-size__value" data-a11y-text-value aria-hidden="true">100%</span>
+            <button type="button" class="a11y-btn a11y-btn--square" data-a11y-text="up" aria-label="Bigger text">A+</button>
+          </div>
+          <div class="a11y-buttons a11y-buttons--stack">
+            <button type="button" class="a11y-btn" data-a11y-switch="font" data-a11y-label="Easy to read font" aria-pressed="false">Easy to read font</button>
+            <button type="button" class="a11y-btn" data-a11y-switch="spacing" data-a11y-label="More space between lines" aria-pressed="false">More space between lines</button>
+          </div>
+        </div>
+        <div class="a11y-group" role="group" aria-labelledby="a11y-g3">
+          <h3 id="a11y-g3">Colours</h3>
+          <div class="a11y-buttons a11y-buttons--grid">
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--standard" data-a11y-colour="standard" aria-pressed="true">Standard</button>
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--contrast" data-a11y-colour="contrast" aria-pressed="false">High contrast</button>
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--dark" data-a11y-colour="dark" aria-pressed="false">Dark</button>
+            <button type="button" class="a11y-btn a11y-swatch a11y-swatch--cream" data-a11y-colour="cream" aria-pressed="false">Soft cream</button>
+          </div>
+          <button type="button" class="a11y-btn" data-a11y-switch="links" data-a11y-label="Highlight links" aria-pressed="false">Highlight links</button>
+        </div>
+        <div class="a11y-group" role="group" aria-labelledby="a11y-g4">
+          <h3 id="a11y-g4">Focus</h3>
+          <div class="a11y-buttons a11y-buttons--stack">
+            <button type="button" class="a11y-btn" data-a11y-switch="ruler" data-a11y-label="Reading ruler" aria-pressed="false">Reading ruler</button>
+            <button type="button" class="a11y-btn" data-a11y-switch="mask" data-a11y-label="Screen mask" aria-pressed="false">Screen mask</button>
+            <button type="button" class="a11y-btn" data-a11y-switch="cursor" data-a11y-label="Big cursor" aria-pressed="false">Big cursor</button>
+          </div>
+        </div>
+      </div>
+      <div class="a11y-panel__foot">
+        <button type="button" class="a11y-btn" data-a11y-reset>Reset all</button>
+        <button type="button" class="a11y-btn a11y-btn--main" data-a11y-close>Close</button>
+      </div>
+      <p class="sr-only" role="status" data-a11y-status></p>
+    </div>
+  </div>
+<header class="site-header">
+    <a class="logo" href="index.html" aria-label="QuickVolunteer home"><img src="assets/icons/logo.svg" alt="" width="34" height="31"><span>QuickVolunteer</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="signup.html?from=ask">Ask for Help</a>
+      <a href="find-a-task.html">Offer Support</a>
+      <a href="impact.html">Impact</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn--outline btn--icon" href="find-a-task.html" aria-label="Search tasks"><img src="assets/icons/search.svg" alt="" width="22" height="22"></a>
+      <a class="btn btn--outline" href="login.html" data-auth="out">Log in</a>
+      <a class="btn btn--primary" href="signup.html" data-auth="out">Sign up</a>
+      <div class="notif" data-notif data-auth="in" hidden>
+        <button class="btn btn--outline btn--icon notif__btn" type="button" aria-label="Notifications" aria-expanded="false" aria-haspopup="true"><img src="assets/icons/bell.svg" alt="" width="22" height="22"><span class="notif__dot" hidden></span></button>
+        <div class="notif__panel" role="dialog" aria-label="Notifications" hidden>
+          <p class="notif__title">Notifications</p>
+          <div class="notif__item" data-notif-profile hidden>
+            <p><strong>Finish setting up your profile</strong></p>
+            <p>Add your area and how you want to take part to see tasks near you and your best matches.</p>
+            <a class="btn btn--primary notif__cta" href="onboarding.html">Complete profile</a>
+          </div>
+          <p class="notif__empty" data-notif-empty>You are all caught up.</p>
+        </div>
+      </div>
+      <a data-auth="in" hidden class="account-chip" href="dashboard.html"><span class="avatar" data-initial>A</span><span data-first-name>My dashboard</span></a>
+      <a data-auth="in" hidden class="btn btn--outline" href="index.html" data-logout>Log out</a>
+    </div>
+    <div class="mobile-header-actions">
+      <a class="icon-btn mobile-search" href="find-a-task.html" aria-label="Search tasks"><img src="assets/icons/search.svg" alt="" width="22" height="22" style="width:22px;height:22px"></a>
+      <div class="notif notif--mobile" data-notif data-auth="in" hidden><button class="icon-btn notif__btn" type="button" aria-label="Notifications" aria-expanded="false" aria-haspopup="true"><img src="assets/icons/bell.svg" alt="" width="22" height="22" style="width:22px;height:22px"><span class="notif__dot" hidden></span></button>
+        <div class="notif__panel" role="dialog" aria-label="Notifications" hidden>
+          <p class="notif__title">Notifications</p>
+          <div class="notif__item" data-notif-profile hidden>
+            <p><strong>Finish setting up your profile</strong></p>
+            <p>Add your area and how you want to take part to see tasks near you and your best matches.</p>
+            <a class="btn btn--primary notif__cta" href="onboarding.html">Complete profile</a>
+          </div>
+          <p class="notif__empty" data-notif-empty>You are all caught up.</p>
+        </div></div>
+      <button class="icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><img src="assets/icons/menu-menu.svg" alt="" width="48" height="48"></button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu">
+    <div>
+      <div class="mobile-menu__top">
+        <a class="logo" href="index.html" aria-label="QuickVolunteer home"><img src="assets/icons/logo.svg" alt="" width="34" height="31"><span>QuickVolunteer</span></a>
+        <button class="icon-btn menu-close" type="button" aria-label="Close menu"><img src="assets/icons/menu-close.svg" alt="" width="48" height="48"></button>
+      </div>
+      <form class="mobile-menu__search" action="find-a-task.html" role="search">
+        <label class="search-field"><img src="assets/icons/search-field.svg" alt="" width="20" height="20"><span class="sr-only">Search tasks</span><input type="search" name="q" placeholder="Search tasks"></label>
+      </form>
+      <nav class="mobile-menu__links" aria-label="Mobile">
+        <a class="mobile-link" href="index.html"><span class="mobile-link__icon"><img src="assets/icons/menu-home.svg" alt="" width="18" height="18"></span><span>Home</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="signup.html?from=ask"><span class="mobile-link__icon"><img src="assets/icons/menu-hand.svg" alt="" width="18" height="18"></span><span>Ask for Help</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="find-a-task.html"><span class="mobile-link__icon"><img src="assets/icons/menu-heart.svg" alt="" width="18" height="18"></span><span>Offer Support</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="impact.html"><span class="mobile-link__icon"><img src="assets/icons/menu-chart.svg" alt="" width="18" height="18"></span><span>Impact</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+        <a class="mobile-link" href="about.html"><span class="mobile-link__icon"><img src="assets/icons/menu-info.svg" alt="" width="18" height="18"></span><span>About</span><img class="chevron" src="assets/icons/menu-chevron.svg" alt="" width="20" height="20"></a>
+      </nav>
+    </div>
+    <div class="mobile-menu__account">
+      <hr>
+      <div data-auth="out" class="mobile-menu__out">
+      <p>Join your community in just a few minutes.</p>
+      <a class="btn btn--outline btn--block" href="login.html">Log in</a>
+      <a class="btn btn--primary btn--block" href="signup.html">Sign up</a>
+      </div>
+      <div data-auth="in" hidden class="mobile-menu__in">
+      <nav class="mobile-menu__mine" aria-label="My account"><a href="my-tasks.html">My tasks</a><a href="my-requests.html">My requests</a><a href="profile.html">My profile</a></nav>
+      <a class="btn btn--primary btn--block" href="dashboard.html">My dashboard</a>
+      <a class="btn btn--outline btn--block" href="index.html" data-logout>Log out</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <h1>Frequently asked questions</h1>
+      <p class="lead">Cannot find an answer? Get in touch with our team.</p>
+    </section>
+    <div class="prose">
+
+      <details class="faq"><summary>Is QuickVolunteer free?</summary><p>Yes. It is free for everyone who asks for help and everyone who gives help.</p></details>
+      <details class="faq"><summary>Can I ask for help and volunteer with the same account?</summary><p>Yes. One account lets you ask for help, give help, or both. You can change this in your profile at any time.</p></details>
+      <details class="faq"><summary>How long does a task take?</summary><p>Every task takes between 15 and 60 minutes. Tasks can be in person or remote, by phone or online.</p></details>
+      <details class="faq"><summary>How are members verified?</summary><p>Your account works as soon as you sign up. Verification is optional: upload a photo of your ID document from your profile, our team checks it and then deletes it, and your profile picture gets a verified badge. You can choose to see only tasks from verified members.</p></details>
+      <details class="faq"><summary>How are completed tasks recorded?</summary><p>When you and the other person both confirm a task, it is added to each of your activity histories. Our team keeps a count of completed tasks, which we plan to use for volunteer levels in the future.</p></details>
+      <details class="faq"><summary>What can other members see about me?</summary><p>Your first name and initial, when you joined, whether you are verified, your About me, your skills and how many tasks you have completed. Your email, postcode and address stay private.</p></details>
+      <details class="faq"><summary>What if something goes wrong?</summary><p>Use Report a concern on any task or profile. An administrator reviews every report and can suspend an account. If someone is in danger, call 999.</p></details>
+      <details class="faq"><summary>Is my address shared?</summary><p>No. Other members only see your neighbourhood. Your exact address is shared only with the volunteer you accept.</p></details>
+      <div class="cta-band"><p>Still have a question?</p><a class="btn btn--primary" href="contact.html">Contact us</a></div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="QuickVolunteer home"><img src="assets/icons/logo.svg" alt="" width="34" height="31"><span>QuickVolunteer</span></a>
+        <p>Making it easier to help your community, one small task at a time.</p>
+      </div>
+      <nav class="footer-links" aria-label="Get involved">
+        <h2>Get involved</h2>
+        <a href="signup.html?from=ask">Ask for Help</a>
+        <a href="find-a-task.html">Offer Support</a>
+        <a href="volunteer-guide.html">Volunteer Guide</a>
+        <a href="faqs.html">FAQs</a>
+      </nav>
+      <nav class="footer-links" aria-label="Quick links">
+        <h2>Quick links</h2>
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-touch">
+        <h2>Stay in touch</h2>
+        <p>Get news about QuickVolunteer and new ways to help near you.</p>
+        <form class="subscribe" novalidate>
+          <label class="sr-only" for="subscribe-email">Your email address</label>
+          <input id="subscribe-email" type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="subscribe-note" hidden></p>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>© 2026 QuickVolunteer. Small Tasks. Big Impact.</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" width="18" height="18"></a>
+        <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="" width="18" height="18"></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>
